@@ -1,0 +1,586 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2023-01-18 Wed 14:23 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>CHEM 380: Undergraduate Research</title>
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+</style>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">CHEM 380: Undergraduate Research</h1>
+<p>
+<b>Instructor:</b> Dr. Al Fischer, PhD 
+</p>
+
+<p>
+<b>Office Hours:</b> By appointment at <a href="http://www.calendly.com/drfischer">calendly.com/drfischer</a> (AP 342)  
+</p>
+
+<p>
+<b>Email:</b> <a href="mailto:dfischer@wcu.edu">dfischer@wcu.edu</a>
+</p>
+
+<div id="outline-container-org85d05c6" class="outline-2">
+<h2 id="org85d05c6"><span class="section-number-2">1.</span> Course Description</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+In this course, you will also present your thesis project in an open seminar and defend your thesis to your Thesis Research Advisory Committee
+</p>
+</div>
+</div>
+
+<div id="outline-container-org4970340" class="outline-2">
+<h2 id="org4970340"><span class="section-number-2">2.</span> Student Learning Outcomes</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+To achieve a satisfactory grade in this course, students will:
+</p>
+
+<ul class="org-ul">
+<li>Demonstrate safe, accurate, and precise laboratory practices.</li>
+<li>Document all work to enable replicable experiments and reproducible research.</li>
+<li>Document all work to enable replicable experiments and reproducible research.</li>
+<li>Utilize and/or develop chemical instrumentation and electronic test equipment to collect data.</li>
+<li>Utilize the scientific method to methodically test hypotheses, troubleshoot experimental procedures, and collect robust data.</li>
+<li>Critically evaluate data to draw sound, statistically valid conclusions.</li>
+<li>Communicate analysis questions, methods, results, and conclusions using written word, pictorial figures, data tables, and oral communications.</li>
+<li>Learning outcomes can be refined on a individual basis for each student and project. The overall goal of the course is to demonstrate that you’ve developed the skills and knowledge necessary to be a successful, independent chemist capable of drawing sound scientific conclusions from analytical data.</li>
+</ul>
+</div>
+</div>
+
+
+
+<div id="outline-container-orgadbbdf9" class="outline-2">
+<h2 id="orgadbbdf9"><span class="section-number-2">3.</span> Course Materials</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+<b>Technology:</b> Students will need a laptop computer meeting Chemistry and Physics’ minimum computer requirements. A web browser and internet connection will be necessary for communicating with your instructor. Microsoft Teams and/or Canvas will be used for tracking time, tasks, and communicating with your lab members. Please use Teams for group discussions about the lab so everyone is included! Students can install the Microsoft Teams desktop and/or mobile app(s) on their device(s) using their through the WCU Office365 web portal.
+</p>
+
+<p>
+Data, electronic notebooks, and code will be shared via GitHub. Git is a tool that allows collaboration on documents while providing robust version control. GitHub is an online utility that streamlines the Git workflow.
+</p>
+
+<p>
+A standard office suite (e.g. word processor, spreadsheet program, etc) will be necessary for completing work. Additional software (e.g. Arduino / Teensyduino, Julia, R, etc.) may be necessary on a case-by-case basis and will either be free of charge or provided for students by their research advisor.
+</p>
+
+<p>
+<b>Lab Notebook:</b> A laboratory notebook will be provided for you. The notebook remains property of WCU and must be relinquished to your instructor at the end of the semester.
+</p>
+
+<p>
+Personal Protective Equipment:
+</p>
+
+<p>
+Gloves will be provided for you and should be worn when necessary.
+Goggles/Safety Glasses can be provided if you do not already have your own. You must wear goggles at all times while in the lab.
+Lab Coats can be provided if you do not already have your own. You should wear one when working with especially hazardous chemicals, especially concentrated acids and bases.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge25703c" class="outline-2">
+<h2 id="orge25703c"><span class="section-number-2">4.</span> Grading</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+Your final grade will be judged based on the following, with an emphasis on thesis writing, data organization, and steps taken to ensure continuity of your project for future lab members:
+</p>
+
+<ol class="org-ol">
+<li><b>Data Collection, Archiving, and Documentation (20%)</b></li>
+</ol>
+
+<p>
+You will be issued a paper lab notebook to track your day-to-day activities. You should follow the same guidelines as my instrumental analysis course: <a href="https://chem370.github.io/lab-notebooks/">CHEM 370 Lab Notebook Guidelines</a>.
+</p>
+
+<p>
+However, much of your data processing work and data will be electronic. In addition to a paper notebook, you are expected to keep organized, well-documented files and electronic notebooks. All electronic data (spectra, chromatograms, spreadsheets, data processing notebooks, etc.) should be saved on the Xenon server without exception and any files referenced in notebooks should be uploaded to GitHub. All data files and your notebook remain property of WCU and must be turned in by the end of the semester.
+</p>
+
+<p>
+Unless specified otherwise, all datafiles and notebooks should be named with the following convention: yyyymmdd<sub>descriptiveName.extenstion</sub>
+</p>
+
+<p>
+In particular, note the date format, the underscore, and the use of camelCase rather than spaces. Filenames should be written in your lab notebook so it’s clear which files go with which experiment.
+</p>
+
+<p>
+Depending on your project, you may also be expected to develop documentation and instructions for specific portions of instruments or procedures you develop. Likewise, you will be expected to maintain comprehensive binders of datasheets for components used in your designs.
+</p>
+
+<p>
+The goals of this portion of your work are to (1) provide a long-term record of your work that will aid future students who continue your project and (2) help you learn rigorous methods of documenting day-to-day work in the laboratory.
+</p>
+
+<ol class="org-ol">
+<li><b>Communication of Work (20%)</b></li>
+</ol>
+
+<p>
+Students will write a thesis that meets WCU's thesis requirements.
+</p>
+
+<p>
+In addition, students may give a short (10-15 minute) presentations to lab research group throughout the semester that summarize progress thus far.
+</p>
+
+<ol class="org-ol">
+<li><b>Progress and Work Ethic (40%)</b></li>
+</ol>
+
+<p>
+It is expected 1 credit hour is equal to a minimum of 3 research hours per week. For example, if you are enrolled in 3 credit hours of CHEM 380, you should spend a minimum of 9 hours per week in the lab. However, progress toward your research goal(s) is your ultimate goal, and some students may require additional time to make sufficient progress. Further, some weeks you may only need to spend a few minutes in lab, whereas other weeks may require overtime. Students who do not complete lab work will be dismissed from the lab and asked not to return. You will be notified via 5th week grades if your performance is unsatisfactory.
+</p>
+
+<p>
+Remember that some weeks may require you devote all of your research time to lab work, while others may require you devote all of your research time to reading or data processing. Try to plan several weeks in advance to make effective use of your time and take advantage of your own personal work habits. You should keep open communication with your advisor about your plans, progress, and what you’re working on.
+</p>
+
+<p>
+Your time will be tracked in Microsoft Teams and/or Canvas using time logging tools. Students must turn in their hours weekly for a grade.
+</p>
+
+<p>
+You will complete weekly updates on your work for a grade. You are expected to make progress each week. These updates may be completed by weekly meetings, weekly updates to (for example) a PowerPoint document, or weekly data processing notebooks, determined on an as-needed basis. You should plan to meet with your research advisor at least once per week unless told otherwise.
+</p>
+
+<ol class="org-ol">
+<li><b>Safety and Cleanliness 20%)</b></li>
+</ol>
+
+<p>
+You are expected to maintain a safe and clean working environment at all times. As a graduate student, you are especially called upon to take responsibility for maintaining the lab and serving as a role model for undergraduate research students. Any shared materials or supplies should be returned to their designated location at the end of the day so they are ready for the next students who use the lab. Students may be assigned cleanup and maintenance activities such as emptying drying racks, cleaning benches, making solutions, etc., especially if organizational problems develop.
+</p>
+</div>
+
+
+<div id="outline-container-orgd361d4c" class="outline-3">
+<h3 id="orgd361d4c"><span class="section-number-3">4.1.</span> Grading Scale</h3>
+<div class="outline-text-3" id="text-4-1">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">Range</th>
+<th scope="col" class="org-left">Letter</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">90-100</td>
+<td class="org-left">A</td>
+</tr>
+
+<tr>
+<td class="org-right">80-89.9</td>
+<td class="org-left">B</td>
+</tr>
+
+<tr>
+<td class="org-right">70-79.9</td>
+<td class="org-left">C</td>
+</tr>
+
+<tr>
+<td class="org-right">60-60.9</td>
+<td class="org-left">D</td>
+</tr>
+
+<tr>
+<td class="org-right">&lt;60</td>
+<td class="org-left">F</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgbbc90f4" class="outline-2">
+<h2 id="orgbbc90f4"><span class="section-number-2">5.</span> Course Policies</h2>
+<div class="outline-text-2" id="text-5">
+</div>
+<div id="outline-container-orga16f22a" class="outline-3">
+<h3 id="orga16f22a"><span class="section-number-3">5.1.</span> Communication</h3>
+<div class="outline-text-3" id="text-5-1">
+<p>
+Your official WCU email should be used to communicate with your advisor.  
+</p>
+</div>
+</div>
+
+<div id="outline-container-org4eaf2e6" class="outline-3">
+<h3 id="org4eaf2e6"><span class="section-number-3">5.2.</span> Attendance</h3>
+<div class="outline-text-3" id="text-5-2">
+<p>
+For each credit earned in this course, you are required to spend three hours per week in the lab. For students that take 2 credits research, 6 hours per week are required, and for students that take 3 credits of research, 9 hours per week are required. Attendance will be monitored by weekly log sheets submitted through neon (see below). As a courtesy, please notify your instructor as soon as possible if you know you will be absent or have missed a scheduled research time. You will need to make up any missed lab time unless the absence is due to a University closing (e.g. Advising Day, inclement weather, etc.).
+</p>
+</div>
+</div>
+
+<div id="outline-container-org3cd2404" class="outline-3">
+<h3 id="org3cd2404"><span class="section-number-3">5.3.</span> COVID-19 and Other Sickness</h3>
+<div class="outline-text-3" id="text-5-3">
+<p>
+If you are sick, especially if you are experiencing symptoms of COVID-19, please:
+</p>
+
+<ul class="org-ul">
+<li>Avoid coming to lab when others are present</li>
+<li>Wear a face mask at all times (must be ‘lab use only’).</li>
+<li>Practice good hygiene practices and follow CDC guidelines to minimize spread of COVID19.</li>
+<li>Follow all WCU policies related to COVID-19</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgbd2a681" class="outline-3">
+<h3 id="orgbd2a681"><span class="section-number-3">5.4.</span> Lab Safety</h3>
+<div class="outline-text-3" id="text-5-4">
+</div>
+<div id="outline-container-orgc747b84" class="outline-4">
+<h4 id="orgc747b84"><span class="section-number-4">5.4.1.</span> Proper Laboratory Attire</h4>
+<div class="outline-text-4" id="text-5-4-1">
+<p>
+Students must wear appropriate attire in the lab.
+</p>
+
+<ul class="org-ul">
+<li>Wear eye protection at all times (whenever you are in the room).</li>
+<li>Wear closed-toed shoes that fully cover your feet up to the ankle at all times.</li>
+<li>Wear long pants that extend over the top of your shoes at all times.</li>
+<li>Wear a hair tie for long hair.</li>
+<li>Never wear tank tops, sleeveless shirts, shorts, or sandals.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org78252a1" class="outline-4">
+<h4 id="org78252a1"><span class="section-number-4">5.4.2.</span> Behavior</h4>
+<div class="outline-text-4" id="text-5-4-2">
+<p>
+Never bring food or drink into the laboratory. This includes sealed bottles and items inside backpacks – leave them outside the lab! Do not chew gum, use tobacco products, or apply cosmetics in the lab. Do not place personal items inside fume hoods or where they may come into contact with chemicals. Keep walkways clear of chairs, bookbags, etc. (place them in cubbies!). Wash your hands before leaving lab, and never wear gloves or lab coats outside the lab!
+</p>
+</div>
+</div>
+
+<div id="outline-container-org4ae0dea" class="outline-4">
+<h4 id="org4ae0dea"><span class="section-number-4">5.4.3.</span> Safety Training</h4>
+<div class="outline-text-4" id="text-5-4-3">
+<p>
+Each student must complete research lab safety training each semester. This training will be completed in person. You will verify your training via an online survey no later than the end of the second week of classes. All safety procedures must be followed at all times. This includes wearing long pants, closed-toe shoes, safety glasses or goggles (depending on the work you’re doing) and gloves (when necessary). Lab coats may be required when working with strong acids or bases. Any noxious or volatile chemicals must be used only in a fume hood. All waste must be disposed of properly; if you have any questions about waste disposal please ask your instructor or the Research Operations Manager.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgee6b9f1" class="outline-4">
+<h4 id="orgee6b9f1"><span class="section-number-4">5.4.4.</span> Chemical and Laboratory Hygiene</h4>
+<div class="outline-text-4" id="text-5-4-4">
+<p>
+The laboratory is a common area shared by multiple students. Students should leave their workspace in clean condition at all times. Dirty glassware should be cleaned before leaving for the day and put away at the beginning of the following day. All chemicals and samples should be in clearly labeled containers at all times. The label should include the full name of the compound, the initials of the person who created the substance, and the date the substance was created (including the year), and the page number in your notebook that corresponds to the relevant experiment.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org703b263" class="outline-4">
+<h4 id="org703b263"><span class="section-number-4">5.4.5.</span> Instrument Safety</h4>
+<div class="outline-text-4" id="text-5-4-5">
+<p>
+Students should not use instruments or equipment that they have not been trained on. If you are unsure how to complete a task on an instrument ask your instructor for clarification or training. It is better to do something late after asking for help than to do something wrong and damage an instrument or hurt yourself or another student. You may be required to use instruments in the core instrument lab. Students should consult with the Instrumentation Specialist for training and policies prior to using any instruments.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgdc3e928" class="outline-4">
+<h4 id="orgdc3e928"><span class="section-number-4">5.4.6.</span> Laboratory Access</h4>
+<div class="outline-text-4" id="text-5-4-6">
+<p>
+A key to the research lab may be obtained from Ms. Diann Ferguson in the Chemistry Main Office if any are available; a $10 deposit is required. Students should never work in the lab alone! Likewise, do not allow individuals who have not received lab safety training into the lab space. Lab doors should be kept closed at all times (not propped) and should be locked anytime the lab will be unoccupied. In addition to the lab, there are many hallway desks / tables / sitting areas for studying and collaborating; I encourage you to use these with other lab members for reading and data processing so that you can help each other.
+</p>
+
+<p>
+The labs are shared spaces. Some materials and spaces in the lab may be shared among all lab groups. Please keep these clean and orderly and respect common equipment. Other materials and spaces may be devoted to a particular research group or faculty member. Do not enter other research group spaces without permission and do not borrow materials from other research groups without permission. Likewise, please keep our materials organized and stored in their proper place so they do not get misplaced.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgd7f8850" class="outline-4">
+<h4 id="orgd7f8850"><span class="section-number-4">5.4.7.</span> Pregnancy</h4>
+<div class="outline-text-4" id="text-5-4-7">
+<p>
+Certain chemicals can have severe harmful effects on unborn children. Any student who is pregnant or might have become pregnant and wished to avoid these hazards should notify her TA or instructor before conducting any laboratory work so that proper safety precautions can be taken.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf4d8266" class="outline-3">
+<h3 id="orgf4d8266"><span class="section-number-3">5.5.</span> Inclement Weather and Other Emergencies</h3>
+<div class="outline-text-3" id="text-5-5">
+<p>
+Please check the University website for campus closings during times of bad weather, local, state, or national emergencies, and/or pandemics. Your health and safety is a priority when traveling. Use common sense when attempting to get to campus and notify your instructor if you are unable to safely make it. Announcements will be made via e-mail if class must be canceled when the University has not officially closed and/or if we are otherwise unable to meet in person.
+</p>
+
+<p>
+In many cases, there will be work you are able to complete from home in the event of inclement weather.
+</p>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org8d2e96e" class="outline-2">
+<h2 id="org8d2e96e"><span class="section-number-2">6.</span> Institutional Policies</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+Course Recording and Broadcasting: Course recording is bound by University Policy 122. Students should request prior permission of their isntructor before recording and class meetings.
+</p>
+
+<p>
+Accommodations for Students with Disabilities: Western Carolina University is committed to providing equal educational opportunities for students with documented disabilities and/or medical conditions. Students who require accommodations must identify themselves as having a disability and/or medical condition and provide current diagnostic documentation to the Office of Accessibility Resources. Please contact the Office of Accessibility Resources, 135 Killian Annex, (828) 227-3886 or by email. Visit the OAR website at <a href="http://accessibility.wcu.edu/">http://accessibility.wcu.edu/</a> for more information.
+</p>
+
+<p>
+Academic Integrity Policy and Reporting Process: This course follows the guidelines set forth in WCU’s <a href="https://www.wcu.edu/experience/dean-of-students/academic-integrity.aspx">Academic Integrity Policy</a>. Refer to the policy for specific rules and sanctions!
+</p>
+
+<p>
+Written work may be checked for plagiarism using computer software. Plagiarism will NOT be tolerated and will by handled according to WCU’s academic honesty policy.
+</p>
+
+<p>
+Community Vision for Inclusive Excellence: All members of the WCU community are expected to embrace WCU’s mission of inclusive excellence. See the <a href="https://www.wcu.edu/discover/diversity/eodp/">Community Vision for Inclusive Excellence.</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org4bcef67" class="outline-2">
+<h2 id="org4bcef67"><span class="section-number-2">7.</span> Getting Help</h2>
+<div class="outline-text-2" id="text-7">
+<p>
+WCU provides many resources to help students succeed. All students are encouraged to take advantage of these resources, regardless of their academic standing! A few are listed below.
+</p>
+
+<ul class="org-ul">
+<li>Office Hours - don’t hesitate to ask your instructor and labmates for help! See the top of this document for more information.</li>
+<li>Writing and Learning Commons (WaLC) for help and feedback on writing. Visit tutoring.wcu.edu or call 828-227-2274.</li>
+<li>Math Tutoring Center for help with calculations and math. For more information, visit mtc.wcu.edu or call 828–227–3830.</li>
+<li>Counseling and Psychological Services (CAPS): CAPS is here to help if you’re experiencing mental health worries such as anxiety, depression, insomnia, trouble concentrating, relationship problems, and more. For more information about CAPS, visit <a href="https://www.wcu.edu/experience/health-and-wellness/caps/index.aspx">https://www.wcu.edu/experience/health-and-wellness/caps/index.aspx</a> or call 828-227-7469. Additionally, you may call the Western NC 24-hour crisis line at 888-315-2880 or the Suicide Prevention Lifeline at 800-273-8255.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org73626bb" class="outline-2">
+<h2 id="org73626bb"><span class="section-number-2">8.</span> University Dates</h2>
+<div class="outline-text-2" id="text-8">
+<ul class="org-ul">
+<li>Academic Calendar The University academic calendar can be found at <a href="http://www.wcu.edu/learn/academic-calendar.aspx">here</a>. It includes dates for all breaks, University closures, final exams, etc.</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2023-01-18 Wed 14:23</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
